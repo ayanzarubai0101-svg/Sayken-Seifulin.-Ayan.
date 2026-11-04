@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #080909;
+    --panel: #111313;
+    --gold: #c9a34a;
+    --gold2: #efd08a;
+    --text: #f4eee2;
+    --muted: #b9b3a8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: radial-gradient(ellipse at 70% 0, #292219, #080909 42%);
+    color: var(--text);
+    font-family: Manrope, Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #080909dd;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid #8e6c2d55;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font: italic 700 24px 'Cormorant Garamond';
+    color: var(--gold2);
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.links a:hover {
+    color: var(--gold2);
+}
+
+.controls {
+    display: flex;
+    gap: 7px;
+}
+
+.controls button,
+.btn {
+    border: 1px solid #a8843e;
+    background: #171510;
+    color: var(--text);
+    padding: 10px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.controls button:hover,
+.btn:hover {
+    background: var(--gold);
+    color: #080909;
+}
+
+.controls button.active {
+    background: var(--gold);
+    color: #080909;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1200px;
+    min-height: 570px;
+    margin: auto;
+    padding: 50px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-text {
+    animation: appear 1s ease both;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font: 700 clamp(48px, 7vw, 88px)/.9 'Cormorant Garamond';
+    margin: 25px 0;
+}
+
+h1 span {
+    color: var(--gold2);
+}
+
+.lead {
+    max-width: 460px;
+    line-height: 1.8;
+    color: #d5cfc3;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: sepia(.2) grayscale(.15);
+    animation: floating 6s ease-in-out infinite;
+}
+
+/* SECTIONS */
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 55px 24px;
+}
+
+.section-title {
+    text-align: center;
+    font: 600 42px 'Cormorant Garamond';
+    color: var(--gold2);
+    margin-bottom: 35px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: " ✦ ";
+    color: var(--gold);
+}
+
+/* BIOGRAPHY */
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 13px;
+}
+
+.card {
+    background: linear-gradient(145deg, #171817, #0d0f0f);
+    border: 1px solid #4c3a1e;
+    border-radius: 13px;
+    padding: 20px;
+    transition: .3s;
+    opacity: 0;
+    animation: appear .8s forwards;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 35px #0008;
+}
+
+.year {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    font: 600 23px 'Cormorant Garamond';
+    margin: 12px 0;
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* FACTS */
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.fact {
+    padding: 25px;
+    border: 1px solid #46351b;
+    border-radius: 12px;
+    background: #101211;
+    transition: .3s;
+}
+
+.fact:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.icon {
+    font-size: 27px;
+    color: var(--gold);
+}
+
+.fact h3 {
+    font: 600 24px 'Cormorant Garamond';
+    margin: 15px 0;
+}
+
+.fact p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* QUOTE */
+
+.quote {
+    text-align: center;
+    padding: 45px 20px;
+    border-top: 1px solid #4b371c;
+    border-bottom: 1px solid #4b371c;
+    font: italic 30px 'Cormorant Garamond';
+    color: var(--gold2);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: #827c72;
+    padding: 30px;
+    font-size: 12px;
+}
+
+#top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: #080909;
+    border: 0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+/* ANIMATIONS */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .lead {
+        margin: auto auto 30px;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+/* PHONE */
+
+@media (max-width: 520px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .links a {
+        font-size: 12px;
+    }
+
+    .timeline,
+    .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 35px;
+    }
+
+    .hero-image {
+        height: 270px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .quote {
+        font-size: 23px;
+    }
+
+    .card,
+    .fact {
+        padding: 20px;
+    }
+}
